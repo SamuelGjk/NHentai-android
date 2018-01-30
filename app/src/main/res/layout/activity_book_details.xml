@@ -1,84 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                 android:id="@+id/main_content"
-                                                 android:layout_width="match_parent"
-                                                 android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/main_content"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/details_big_cover_max_height"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginStart="48dp"
-            app:expandedTitleMarginEnd="64dp">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax">
-
-                <ImageView
-                    android:id="@+id/app_bar_background"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop" />
-
-	            <View
-		            android:layout_width="match_parent"
-		            android:layout_height="90dp"
-		            android:background="@drawable/shadow_gradient"
-		            android:layout_gravity="top"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@drawable/shadow_normal_reserve"
-                    android:layout_gravity="bottom"/>
-
-            </FrameLayout>
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_collapseMode="pin" />
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.widget.NestedScrollView
+    <moe.feng.nhentai.view.ObservableScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView"
-        android:paddingTop="24dp"
+        android:id="@+id/scroll_view"
+        android:paddingTop="@dimen/appbar_parallax_max_height"
         android:paddingBottom="24dp"
-        android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:clipToPadding="false">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="420dp">
+            android:paddingTop="24dp">
 
             <moe.feng.nhentai.view.WheelProgressView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="48dp"
-                android:layout_marginBottom="128dp"
+                android:layout_marginBottom="48dp"
                 android:id="@+id/wheel_progress"
                 app:matProg_barColor="@color/pink_500"
                 app:matProg_barWidth="4dp"/>
@@ -90,7 +36,26 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <TextView
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingLeft="16dp"
+					android:paddingRight="16dp"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:id="@+id/pretty_title"/>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="0.5dp"
+					android:paddingLeft="16dp"
+					android:paddingRight="16dp"
+					android:background="@android:color/black"
+					android:alpha="0.3"
+					android:layout_marginTop="24dp"
+					android:layout_marginBottom="24dp"/>
+
+
+				<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -116,31 +81,152 @@
                     android:id="@+id/book_tags_layout"
                     android:orientation="vertical"/>
 
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="0.5dp"
+					android:paddingLeft="16dp"
+					android:paddingRight="16dp"
+					android:background="@android:color/black"
+					android:alpha="0.3"
+					android:layout_marginTop="24dp"
+					android:layout_marginBottom="10dp"/>
+
+	            <android.support.v7.widget.AppCompatTextView
+		            android:layout_height="wrap_content"
+	                android:layout_width="wrap_content"
+	                android:layout_marginTop="16dp"
+	                android:layout_marginBottom="16dp"
+	                android:layout_marginStart="16dp"
+					android:layout_marginLeft="16dp"
+	                android:text="@string/title_preview"
+		            android:textColor="?attr/colorAccent"
+		            android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
 	            <android.support.v7.widget.RecyclerView
 		            android:layout_width="match_parent"
 		            android:layout_height="420dp"
-		            android:layout_marginTop="10dp"
-		            android:paddingLeft="24dp"
-		            android:paddingRight="24dp"
 		            android:clipToPadding="false"
 		            android:id="@+id/preview_list"/>
+
+	            <View
+		            android:layout_width="match_parent"
+		            android:layout_height="0.5dp"
+		            android:paddingLeft="16dp"
+		            android:paddingRight="16dp"
+		            android:background="@android:color/black"
+		            android:alpha="0.3"
+		            android:layout_marginTop="24dp"
+		            android:layout_marginBottom="10dp"/>
+
+	            <android.support.v7.widget.AppCompatTextView
+		            android:layout_height="wrap_content"
+		            android:layout_width="wrap_content"
+		            android:layout_marginTop="16dp"
+		            android:layout_marginBottom="16dp"
+					android:layout_marginEnd="@dimen/floating_action_button_margin"
+					android:layout_marginLeft="@dimen/floating_action_button_margin"
+					android:layout_marginRight="@dimen/floating_action_button_margin"
+		            android:text="@string/title_recommend"
+		            android:textColor="?attr/colorAccent"
+		            android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+	            <android.support.v7.widget.RecyclerView
+		            android:layout_width="match_parent"
+		            android:layout_height="240dp"
+		            android:clipToPadding="false"
+		            android:id="@+id/recommend_list"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+    </moe.feng.nhentai.view.ObservableScrollView>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/appbar_parallax_max_height"
+		android:background="?attr/colorPrimary"
+		android:id="@+id/appbar_container"
+		android:clickable="true"
+		android:foreground="@drawable/clickable_foreground">
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/image_container">
+
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/preview_placeholder"
+				android:scaleType="centerCrop"/>
+
+			<net.grobas.view.MovingImageView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/preview_image"
+				android:scaleType="centerCrop"
+				android:adjustViewBounds="true"
+				app:miv_load_on_create="true"
+				app:miv_max_relative_size="1.5"
+				app:miv_min_relative_offset="0.2"
+				app:miv_start_delay="1000"
+				app:miv_repetitions="-1"
+				app:miv_speed="100"/>
+
+		</FrameLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="90dp"
+			android:background="@drawable/shadow_gradient"
+			android:layout_gravity="top"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/appbar_background"
+			android:background="?attr/colorPrimary"
+			android:alpha="0">
+
+			<moe.feng.nhentai.view.StatusBarHeaderView
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:background="@color/status_bar_tint_color"/>
+
+		</LinearLayout>
+
+	</FrameLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<moe.feng.nhentai.view.StatusBarHeaderView
+			android:layout_width="match_parent"
+			android:layout_height="0dp"/>
+		
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+			app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+		
+	</LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/fab"
-        app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|right"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/appbar_parallax_max_height"
+        android:layout_marginEnd="@dimen/floating_action_button_margin"
+		android:layout_marginRight="@dimen/floating_action_button_margin"
         android:src="@drawable/ic_photo_library_black_24dp"
         android:tint="@android:color/white"
-        android:layout_margin="24dp"
         app:borderWidth="0dp"
         app:elevation="5dp"/>
 
-</android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

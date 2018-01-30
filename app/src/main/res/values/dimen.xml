@@ -4,10 +4,9 @@
 	<dimen name="fab_transition_z">5dp</dimen>
 	<dimen name="touch_raise">6dp</dimen>
 	<dimen name="appbar_elevation">5dp</dimen>
+	<dimen name="searchbar_elevation_raised">5dp</dimen>
 
 	<dimen name="navigation_view_width">256dp</dimen>
-
-	<dimen name="details_big_cover_max_height">380dp</dimen>
 
 	<dimen name="tag_margin_x">2dp</dimen>
 	<dimen name="tag_margin_y">4dp</dimen>
@@ -21,11 +20,22 @@
 	<dimen name="title_bar_height">64dp</dimen>
 	<dimen name="title_bar_content_margin_bottom">8dp</dimen>
 	<dimen name="background_over_height">24dp</dimen>
-	<dimen name="background_min_height">218dp</dimen>
+	<dimen name="background_delta_height">164dp</dimen>
+	<dimen name="background_max_height">218dp</dimen>
 	<dimen name="list_margin_top">120dp</dimen>
 
 	<dimen name="logo_fade_out_translation_y">48dp</dimen>
 	<dimen name="widget_fade_in_translation_y_s">12dp</dimen>
 	<dimen name="widget_fade_in_translation_y_m">24dp</dimen>
+
+	<dimen name="search_history_item_height">48dp</dimen>
+
+	<!-- Book Details -->
+	<dimen name="toolbar_elevation">5dp</dimen>
+	<dimen name="appbar_parallax_max_height">350dp</dimen>
+	<dimen name="appbar_banner_title_size">18sp</dimen>
+	<dimen name="appbar_tab_height">48dp</dimen>
+	<dimen name="floating_action_button_margin">16dp</dimen>
+	<dimen name="floating_action_button_size_half">32dp</dimen>
 
 </resources>

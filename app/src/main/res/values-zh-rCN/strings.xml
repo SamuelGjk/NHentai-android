@@ -4,11 +4,29 @@
     <string name="app_name">NH 本子</string>
     <string name="action_settings">设置</string>
     <string name="action_search">搜索</string>
+    <string name="action_next_page">加载下一页</string>
+
+    <!-- Initial -->
+    <string name="dialog_permission_title">权限需要</string>
+    <string name="dialog_permission_msg">NH 本子需要读写储存权限以缓存图片。缺少权限可能会导致本应用无法正常工作。</string>
+    <string name="snack_permission_failed">权限请求被拒绝了QAQ</string>
+
+    <!-- New Home Design -->
+    <string name="search_bar_hint">在这里搜索本子....</string>
+    <string name="title_bar_main_recent">最新本子</string>
+    <string name="title_bar_updated_time_just_now">刚刚更新</string>
+    <string name="title_bar_updated_time_at">更新于 %s</string>
+	<string name="title_bar_updated_time_null">下拉获取最新信息</string>
 
     <string name="item_home">主页</string>
+    <string name="item_download">已下载</string>
+    <string name="item_favorite_books">已收藏的本子</string>
+    <string name="item_favorite_categories">已收藏的分类</string>
     <string name="item_tag">标签</string>
     <string name="item_character">人物</string>
+	<string name="item_group_other">其它</string>
     <string name="item_open_nhentai">打开 NHentai 网站</string>
+	<string name="item_settings">设置</string>
 
     <string name="title_page_latest">最新</string>
     <string name="title_page_download">已保存的本子</string>
@@ -26,6 +44,12 @@
 
     <string name="label_added_to_favorite">已收藏</string>
 
+    <!-- Random -->
+    <string name="activity_random">手气不错</string>
+    <string name="random_failed_set">未能从 NHentai 获取本子。再试一次？</string>
+    <string name="random_no_data">请先点击随机按钮！</string>
+
+    <!-- Details -->
     <string name="activity_details">详情</string>
     <string name="tag_type_tag">标签:</string>
     <string name="tag_type_parodies">作品:</string>
@@ -52,13 +76,16 @@
     <string name="dialog_ask_d_or_d_delete">删除</string>
     <string name="dialog_ask_d_or_d_continue">继续下载</string>
 
-    <string name="dialog_download_title">正在下载 %s....</string>
+    <string name="dialog_download_title">下载图书：</string>
     <string name="dialog_download_restart">卡住不动了?</string>
-    <string name="dialog_download_progress">%1$d/%2$d</string>
+    <string name="dialog_download_progress">下载进度：</string>
     <string name="dialog_download_paused">(已暂停)</string>
     <string name="dialog_download_notification_title">下载完毕!</string>
     <string name="dialog_download_pause">暂停/继续</string>
     <string name="dialog_download_copying">正在复制到外置空间.... 请稍候。</string>
+
+    <string name="title_preview">预览</string>
+    <string name="title_recommend">相关推荐</string>
 
     <string name="activity_gallery">图库</string>
     <string name="info_total_pages">"共 %d 页"</string>
@@ -67,23 +94,88 @@
     <string name="action_save_failed">当前图片尚未下载完毕，请耐心等待！</string>
     <string name="action_save_unknown">由于未知原因保存失败。</string>
 
+    <string name="activity_search">搜索本子</string>
+	<string name="search_text_hint">输入本子名称....</string>
+	<string name="tips_search_text_empty">请输入你要找的本子名称！</string>
+
     <string name="activity_search_result">搜索结果</string>
     <string name="title_search_result">搜索结果: %s</string>
     <string name="tips_no_result">没有结果。</string>
+    <string name="tips_no_more_results">这里已经是最后一页了。</string>
+    <string name="action_clear">清除文字</string>
+
+    <!-- Category -->
+    <string-array name="category_tabs_title">
+        <item>最新</item>
+        <item>热门</item>
+    </string-array>
 
     <string name="settings_main">设置</string>
+    <string name="snackbar_need_restart">你需要重新启动应用来应用更改。</string>
+    <string name="snackbar_need_restart_action">现在重启</string>
+    <string name="category_options">应用程序设置</string>
     <string name="category_about">关于</string>
     <string name="set_title_app_version">应用程序版本</string>
     <string name="settings_license">开源项目许可协议</string>
-    <string name="set_title_weibo">新浪微博</string>
-    <string name="set_title_weibo_summary">\@某燒餅</string>
     <string name="set_title_google_plus">Google+</string>
     <string name="set_title_google_plus_summary">+Fung Jichun</string>
     <string name="set_title_github">Github 开源项目</string>
     <string name="set_title_github_website">"https://github.com/fython/NHentai-android"</string>
+    <string name="set_title_gpgroup">Google+ 讨论社群</string>
+    <string name="set_title_gpgroup_link">"https://plus.google.com/communities/106652485673516183999"</string>
     <string name="set_title_telegram">Telegram 讨论组</string>
     <string name="set_title_telegram_link">"https://telegram.me/joinchat/0668165200bd194d0a89b8995057e330"</string>
     <string name="set_title_alipay">捐赠支持(支付宝)</string>
     <string name="set_title_alipay_address">316643843\@qq.com</string>
+    <string name="category_ui">界面外观</string>
+    <string name="category_list">列表</string>
+    <string name="set_title_hd_image">加载高质量预览图</string>
+    <string name="set_title_hd_image_summary">这会消耗更多的流量和内存</string>
+    <string name="set_title_cards_count">横向卡片数量</string>
+    <string name="set_title_cards_count_summary">当前值: %s</string>
+    <string-array name="set_cards_count_options">
+        <item>自动计算数量</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="set_cards_count_options_value">
+        <item>-1</item>
+        <item>0</item>
+    </string-array>
+    <string name="category_details">信息页面</string>
+    <string name="set_title_full_image_in_details">加载全高清图片作预览图</string>
+    <string name="set_title_full_image_in_details_summary">这样会消耗大量流量和内存（壕任性选项）</string>
+    <string name="set_title_allow_standalone_task">允许任务独立</string>
+    <string name="set_title_allow_standalone_task_desc">每个本子都会显示为单独的任务</string>
+    <string name="set_title_android_too_old_desc">这个特性在你的 Android 版本上不被支持。</string>
+	<string name="settings_storage">存储</string>
+	<string name="category_folder">文件夹</string>
+	<string name="set_title_nomedia">在系统图库中隐藏已保存的本子</string>
+	<string name="set_title_nomedia_summary">通过在目录生成 \".nomedia\" 保护你的秘密</string>
+
+	<!-- Donate -->
+	<string name="dialog_donate_title">捐助我们</string>
+	<string name="dialog_donate_message">一个好的应用需要时间、精力和你们的支持。
+		如果你非常喜欢 NH 本子并且乐意捐助我们，请发送到支付宝：316643843\@qq.com</string>
+    <string name="favorite_categories_add_finished">类别成功添加到收藏。</string>
+    <string name="favorite_categories_remove_finished">從分類收集成功取出。</string>
+    <string name="dialog_download_finished">下载完成！</string>
+    <string name="dialog_download_error">錯誤下載！</string>
+    <string name="clear_search_inputs">清除所有保存的搜索</string>
+    <string name="clear_search_title">清除保存的搜索</string>
+    <string name="search_cleared">搜索结果成功地清除</string>
+    <string name="new_version_available">检测到新版本</string>
+    <string name="button_update">更新：</string>
+    <string name="updated_apk_download_error">下载更新时出错</string>
+    <string name="updating">下载更新</string>
+    <string name="update_complete">更新已成功下载</string>
+    <string name="checking">檢查更新</string>
+    <string name="close">關</string>
+    <string name="item_recent">最近</string>
+    <string name="no_update">應用程式已更新</string>
+    <string name="ignore">忽視</string>
+    <string name="action_clear_recents">清除所有最近</string>
+    <string name="clear_cache_title">清除缓存</string>
+    <string name="clear_cache">清除设备缓存</string>
+    <string name="cache_cleared">缓存已成功清除</string>
 
 </resources>

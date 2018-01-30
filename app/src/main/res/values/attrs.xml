@@ -55,77 +55,67 @@
 		<attr name="matProg_linearProgress" format="boolean" />
 	</declare-styleable>
 
-	<declare-styleable name="RippleView">
-		<attr name="rd_style" format="reference" />
-		<attr name="rd_enable" format="boolean" />
-	</declare-styleable>
+	<!-- TwoWayGallery View -->
+	<!-- Specifies how to place the content of an object, both
+     on the x- and y-axis, within the object itself. -->
+	<attr name="gravity">
+		<!-- Push object to the top of its container, not changing its size. -->
+		<flag name="top" value="0x30"/>
+		<!-- Push object to the bottom of its container, not changing its size. -->
+		<flag name="bottom" value="0x50"/>
+		<!-- Push object to the left of its container, not changing its size. -->
+		<flag name="left" value="0x03"/>
+		<!-- Push object to the right of its container, not changing its size. -->
+		<flag name="right" value="0x05"/>
+		<!-- Place object in the vertical center of its container, not changing its size. -->
+		<flag name="center_vertical" value="0x10"/>
+		<!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+		<flag name="fill_vertical" value="0x70"/>
+		<!-- Place object in the horizontal center of its container, not changing its size. -->
+		<flag name="center_horizontal" value="0x01"/>
+		<!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+		<flag name="fill_horizontal" value="0x07"/>
+		<!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+		<flag name="center" value="0x11"/>
+		<!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+		<flag name="fill" value="0x77"/>
+		<!-- Additional option that can be set to have the top and/or bottom edges of
+			 the child clipped to its container's bounds.
+			 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+			 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+		<flag name="clip_vertical" value="0x80"/>
+		<!-- Additional option that can be set to have the left and/or right edges of
+			 the child clipped to its container's bounds.
+			 The clip will be based on the horizontal gravity: a left gravity will clip the right
+			 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+		<flag name="clip_horizontal" value="0x08"/>
+	</attr>
 
-	<declare-styleable name="RippleDrawable">
-		<attr name="rd_backgroundColor" format="reference|color"/>
-		<attr name="rd_backgroundAnimDuration" format="reference|integer"/>
-		<attr name="rd_maxRippleRadius" format="reference|dimension|integer">
-			<enum name="match_view" value="0x00000000" />
-		</attr>
-		<attr name="rd_rippleColor" format="reference|color"/>
-		<attr name="rd_rippleAnimDuration" format="reference|integer"/>
-		<attr name="rd_inInterpolator" format="reference"/>
-		<attr name="rd_outInterpolator" format="reference"/>
-		<attr name="rd_maskType" format="integer">
-			<enum name="rectangle" value="0x00000000" />
-			<enum name="oval" value="0x00000001" />
-		</attr>
-		<attr name="rd_rippleType" format="integer">
-			<enum name="touch" value="0x00000000" />
-			<enum name="wave" value="0x00000001" />
-		</attr>
-		<attr name="rd_cornerRadius" format="reference|dimension"/>
-		<attr name="rd_topLeftCornerRadius" format="reference|dimension"/>
-		<attr name="rd_topRightCornerRadius" format="reference|dimension"/>
-		<attr name="rd_bottomLeftCornerRadius" format="reference|dimension"/>
-		<attr name="rd_bottomRightCornerRadius" format="reference|dimension"/>
-		<attr name="rd_padding" format="reference|dimension"/>
-		<attr name="rd_leftPadding" format="reference|dimension"/>
-		<attr name="rd_topPadding" format="reference|dimension"/>
-		<attr name="rd_rightPadding" format="reference|dimension"/>
-		<attr name="rd_bottomPadding" format="reference|dimension"/>
-		<attr name="rd_delayClick" format="integer">
-			<enum name="none" value="0x00000000" />
-			<enum name="untilRelease" value="0x00000001" />
-			<enum name="afterRelease" value="0x00000002" />
-		</attr>
-	</declare-styleable>
+	<!-- Default Gallery style. -->
+	<attr name="galleryStyle" format="reference"/>
 
-	<declare-styleable name="SeekBar">
-		<attr name="sl_trackSize" format="reference|dimension"/>
-		<attr name="sl_primaryColor" format="reference|color"/>
-		<attr name="sl_secondaryColor" format="reference|color"/>
-		<attr name="sl_trackCap" format="integer">
-			<enum name="butt" value="0x00000000" />
-			<enum name="round" value="0x00000001" />
-			<enum name="square" value="0x00000002" />
+	<declare-styleable name="TwoWayGalleryGallery">
+		<attr name="gravity"/>
+		<!-- Sets how long a transition animation should run (in milliseconds)
+			 when layout has changed.  Only relevant if animation is turned on. -->
+		<attr name="animationDuration" format="integer" min="0"/>
+		<attr name="spacing" format="dimension"/>
+		<!-- Sets the alpha on the items that are not selected. -->
+		<attr name="unselectedAlpha" format="float"/>
+		<!-- Standard orientation constant. -->
+		<attr name="orientation">
+			<!-- Defines an horizontal widget. -->
+			<enum name="horizontal" value="0"/>
+			<!-- Defines a vertical widget. -->
+			<enum name="vertical" value="1"/>
 		</attr>
-		<attr name="sl_thumbBorderSize" format="reference|dimension"/>
-		<attr name="sl_thumbRadius" format="reference|dimension"/>
-		<attr name="sl_thumbFocusRadius" format="reference|dimension"/>
-		<attr name="sl_travelAnimDuration" format="reference|integer"/>
-		<attr name="sl_transformAnimDuration" format="reference|integer"/>
-		<attr name="sl_interpolator" format="reference"/>
-		<attr name="sl_minValue" format="reference|integer"/>
-		<attr name="sl_maxValue" format="reference|integer"/>
-		<attr name="sl_stepValue" format="reference|integer"/>
-		<attr name="sl_value" format="reference|integer"/>
-		<attr name="sl_discreteMode" format="reference|boolean"/>
-		<attr name="sl_fontFamily" format="string|reference"/>
-		<attr name="sl_textStyle" format="integer">
-			<enum name="normal" value="0" />
-			<enum name="bold" value="1" />
-			<enum name="italic" value="2" />
-			<enum name="bold_italic" value="3" />
-		</attr>
-		<attr name="sl_textSize" format="reference|dimension"/>
-		<attr name="sl_textColor" format="reference|color"/>
-		<attr name="android:gravity" />
-		<attr name="android:enabled" />
+
+	</declare-styleable>
+	<declare-styleable name="CoverFlow">
+		<!-- Sets the coverage on the items that are not selected. -->
+		<attr name="coverage" format="float"/>
+		<!-- Sets the scale on the items that are not selected. -->
+		<attr name="unselectedScale" format="float"/>
 	</declare-styleable>
 
 </resources>
